@@ -2,13 +2,13 @@ package predavanje_12_10_2026;
 
 public class Zadatak2 {
     public static void main(String[] args) {
-        int age = 21;
-        double height= 1.75;
-        boolean isStudent = true;
-        char grade = 'A';
-        String name = "Ajdin";
+        int godine   = 21;
+        double visina= 1.75;
+        boolean jeStudent = true;
+        char ocjena = 'A';
+        String ime = "Ajdin";
 
-        System.out.println(name + " is " + age + " years old and " + height + "m tall.");
-        System.out.println("Is a student: "+ isStudent + ", Grade: "+ grade);
+        System.out.println(ime + " ima " + godine + " godinu i visok je " + visina + "m");
+        System.out.println("Student: "+ jeStudent + ", ocjena: "+ ocjena);
     }
 }
