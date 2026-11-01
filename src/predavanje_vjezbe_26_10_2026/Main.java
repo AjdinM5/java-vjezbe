@@ -138,6 +138,30 @@ public class Main {
         System.out.println("Pas sa imenom " + trazeni + " nije pronadjen.");
     }
 
+    // Metoda za adoptiranje (brisanje) psa
+    public static void adoptiranjePsa(Scanner sc) {
+        if (psi.isEmpty()) {
+            System.out.println("Nema unesenih pasa.");
+            return;
+        }
+
+        System.out.println("Unesite ime psa kojeg zelite adoptirati: ");
+        String trazeni = sc.nextLine();
+
+        for (int i=0; i<psi.size(); i++) {
+            if (psi.get(i).getIme().equalsIgnoreCase(trazeni)) {
+                Dog adoptiran = psi.remove(i);
+                System.out.println("Pas " + adoptiran.getIme() + " je uspjesno adoptiran.");
+                return;
+            }
+
+        }
+
+        System.out.println("Pas sa imenom " + trazeni + " nije pronadjen.");
+
+    }
+
+
     // Meni
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -150,6 +174,7 @@ public class Main {
         System.out.println("2. Ispisi sve pse");
         System.out.println("3. Pretrazi psa po imenu");
         System.out.println("4. Azuriraj psa");
+        System.out.println("5. Adoptiranje psa");
         System.out.println("0. Izlaz");
         System.out.print("Birate opciju: ");
         izbor = sc.nextInt();
@@ -170,6 +195,9 @@ public class Main {
                 break;
             case 4:
                 azuriranjePsa(sc);
+                break;
+            case 5:
+                adoptiranjePsa(sc);
                 break;
             case 0:
                 System.out.println("Izašli ste iz programa.");
