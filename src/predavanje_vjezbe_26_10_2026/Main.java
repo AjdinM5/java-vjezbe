@@ -37,7 +37,29 @@ public class Main {
 
     }
 
+    // Metoda za pretrazivanje
+    public static void pretraziPsa(Scanner sc) {
+        if (psi.isEmpty()) {
+            System.out.println("Nema unesenih pasa.");
+            return;
+        }
 
+        System.out.println("Unesite ime psa kojeg zelite pronaci: ");
+        String trazeni = sc.nextLine();
+
+        for (int i=0; i<psi.size(); i++) {
+            if (psi.get(i).getIme().equalsIgnoreCase(trazeni)) {
+                System.out.println("Pas " + trazeni + " je pronadjen.");
+                System.out.println("Ime: " + psi.get(i).getIme());
+                System.out.println("Pasmina: " + psi.get(i).getPasmina());
+                System.out.println("Dob: " + psi.get(i).getDob() + " godina");
+                return;
+
+            }
+
+        }
+        System.out.println("Pas sa imenom " + trazeni + " nije pronadjen.");
+    }
 
     // Meni
     public static void main(String[] args) {
@@ -66,6 +88,7 @@ public class Main {
                 ispisiPse();
                 break;
             case 3:
+                pretraziPsa(sc);
                 break;
             case 0:
                 System.out.println("Izašli ste iz programa.");
