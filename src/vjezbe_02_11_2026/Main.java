@@ -29,7 +29,7 @@ public class Main {
 
         ArrayList<Employee> employees = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("EmployeeData.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/vjezbe_02_11_2026/EmployeeData.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
